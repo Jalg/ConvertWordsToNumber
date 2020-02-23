@@ -196,36 +196,45 @@ public:
 
 int main()
 {
-	string sInput  = "I have ten million one thousand forty two apples and twenty-seven pears ";
-	string sInput1 = "I have one hundred million apples";
-	string sInput2 = "I have one hundred forty two apples";
-	string sInput3 = "I have two hundred apples and twenty";
-	string sInput4 = "I have three hundred million apples";
-	string sInput5 = "I have forty three thousand and one hundred apples ";
-	string sInput6 = "I have FORTY three ThouSand and one HUNDRED seventy eight apples and two pears.";
-	
-
-	Converter a;
+	string sInput;
+	Converter converter;
 	string outPut;
 
-	a.SentenceBuilder(a.Splitter(sInput, ' '), outPut);
-	cout << sInput << endl << outPut << endl << endl;
+	cout << "Introduce the text you want to transform the numbers written with words to a number in digit (If you don't introduce anything it will show a test battery): " << endl;
+	getline(cin, sInput);
+	
+	if (!sInput.size()) {
+		converter.SentenceBuilder(converter.Splitter(sInput, ' '), outPut);
+		cout << endl << outPut << endl << endl;
+	}
+	else {
+		string sInput = "I have ten million one thousand forty two apples and twenty-seven pears ";
+		string sInput1 = "I have one hundred million apples";
+		string sInput2 = "I have one hundred forty two apples";
+		string sInput3 = "I have two hundred apples and twenty";
+		string sInput4 = "I have three hundred million apples";
+		string sInput5 = "I have forty three thousand and one hundred apples ";
+		string sInput6 = "I have FORTY three ThouSand and one HUNDRED seventy eight apples and two pears.";
 
-	a.SentenceBuilder(a.Splitter(sInput1, ' '), outPut);
-	cout << sInput1 << endl << outPut << endl << endl;
+		converter.SentenceBuilder(converter.Splitter(sInput, ' '), outPut);
+		cout << sInput << endl << outPut << endl << endl;
 
-	a.SentenceBuilder(a.Splitter(sInput2, ' '), outPut);
-	cout << sInput2 << endl << outPut << endl << endl;
+		converter.SentenceBuilder(converter.Splitter(sInput1, ' '), outPut);
+		cout << sInput1 << endl << outPut << endl << endl;
 
-	a.SentenceBuilder(a.Splitter(sInput3, ' '), outPut);
-	cout << sInput3 << endl << outPut << endl << endl;
+		converter.SentenceBuilder(converter.Splitter(sInput2, ' '), outPut);
+		cout << sInput2 << endl << outPut << endl << endl;
 
-	a.SentenceBuilder(a.Splitter(sInput4, ' '), outPut);
-	cout << sInput4 << endl << outPut << endl << endl;
+		converter.SentenceBuilder(converter.Splitter(sInput3, ' '), outPut);
+		cout << sInput3 << endl << outPut << endl << endl;
 
-	a.SentenceBuilder(a.Splitter(sInput5, ' '), outPut);
-	cout << sInput5 << endl << outPut << endl << endl;
+		converter.SentenceBuilder(converter.Splitter(sInput4, ' '), outPut);
+		cout << sInput4 << endl << outPut << endl << endl;
 
-	a.SentenceBuilder(a.Splitter(sInput6, ' '), outPut);
-	cout << sInput6 << endl << outPut << endl << endl;
+		converter.SentenceBuilder(converter.Splitter(sInput5, ' '), outPut);
+		cout << sInput5 << endl << outPut << endl << endl;
+
+		converter.SentenceBuilder(converter.Splitter(sInput6, ' '), outPut);
+		cout << sInput6 << endl << outPut << endl << endl;
+	}
 }
