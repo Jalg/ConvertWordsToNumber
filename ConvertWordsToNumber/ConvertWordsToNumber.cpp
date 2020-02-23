@@ -203,7 +203,7 @@ int main()
 	cout << "Introduce the text you want to transform the numbers written with words to a number in digit (If you don't introduce anything it will show a test battery): " << endl;
 	getline(cin, sInput);
 	
-	if (!sInput.size()) {
+	if (sInput.size()) {
 		converter.SentenceBuilder(converter.Splitter(sInput, ' '), outPut);
 		cout << endl << outPut << endl << endl;
 	}
